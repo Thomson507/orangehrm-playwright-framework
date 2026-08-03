@@ -44,10 +44,23 @@ tests/
 ## Getting started
 
 ```bash
-git clone https://github.com/Thomson507/Playwright_Version2.git
-cd Playwright_Version2
+# Clone the repository
+git clone https://github.com/Thomson507/orangehrm-playwright-framework.git
+
+# Navigate to the project
+cd orangehrm-playwright-framework
+
+# Install dependencies
 npm ci
+
+# Install Playwright browsers
 npx playwright install --with-deps
+
+# Run all tests
+npx playwright test
+
+# Open the HTML report
+npx playwright show-report
 ```
 
 ## Running the tests
