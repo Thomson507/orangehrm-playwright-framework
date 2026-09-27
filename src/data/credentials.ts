@@ -1,6 +1,6 @@
 export const validUser = {
-    username: 'Admin',
-    password: 'admin123'
+    username: process.env.ORANGEHRM_USERNAME ?? 'admin',
+    password: process.env.ORANGEHRM_PASSWORD ?? 'admin123'
 };
 
 export const invalidUser = {
