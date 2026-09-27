@@ -6,6 +6,9 @@ on:
     branches: [ main, master ]
 jobs:
   test:
+    strategy:
+      matrix:
+        browser: [chromium, firefox, webkit]
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
@@ -19,7 +22,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test
+      run: npx playwright test --project=${{ matrix.browser }}
       env:
         ORANGEHRM_USERNAME: ${{ secrets.ORANGEHRM_USERNAME }}
         ORANGEHRM_PASSWORD: ${{ secrets.ORANGEHRM_PASSWORD }}
